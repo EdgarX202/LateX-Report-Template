@@ -1,0 +1,47 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Author%
+}{%
+Author%
+}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+website1}
+\APACinsertmetastar {%
+website1}%
+\begin{APACrefauthors}%
+Author.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\APACrefbtitle {Title.} {Title.}
+\newblock
+\begin{APACrefURL} [{date}]\url{web address} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Authors%
+}{%
+Authors%
+}{%
+{\protect \APACyear {year}}%
+}]{%
+article1}
+\APACinsertmetastar {%
+article1}%
+\begin{APACrefauthors}%
+Authors, h.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{year}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Title here} {Title here}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journam}{Volume}{Number}{Pages}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

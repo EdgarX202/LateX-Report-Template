@@ -1,0 +1,138 @@
+\documentclass[11pt]{article} % Type of the document.
+
+\usepackage{comment} % For making multi-line comments.
+
+\begin{comment}
+    ------------------------------ READ THIS -----------------------------------------------------
+    This is a custom made LateX template for your reports or other documents. 
+    Created in VS Code. Feel free to edit it according to your needs.
+    Almost everything is commented and should be understandable.
+
+    The TITLE, DECLARATION and BIBLIOGRAPHY are in separate files (report_title.tex, report_declaration.tex, bibliography.bib)
+    Use those to fill in the information as needed.
+
+    Replace \lipsum[] with your text. 
+    This is a 2 column template, if you want a single column, simply remove or comment out \begin{multicols}{2} and \end{multicols}.
+    ----------------------------------------------------------------------------------------------
+\end{comment}
+
+\usepackage{amsmath} % Math tools and environments.
+\usepackage{graphicx} % Includes external images.
+\usepackage[utf8]{inputenc} % Input character encoding.
+\usepackage{multicol} % For adding a single or multi column page
+
+\usepackage{titlesec} % For customising section titles.
+\usepackage{fancyhdr} % Header and Footer control.
+
+\usepackage{apacite} % Format citations and bibliography according to APA style.
+\usepackage{natbib} % Flexible commands for handling citations and bibliographies in various author-date or numerical styles.
+\usepackage{hyperref} % Turn references into clickable links within the document.
+\hypersetup{pdfborder={0 0 0}} % Setting borders to be transparent in the table of contents - otherwise its red.
+
+\usepackage{booktabs} % Create professional looking tables.
+\usepackage{array} % More complex table structures.
+\usepackage{paralist} % Create compact lists (inline, enumerated) for saving space.
+
+\usepackage{verbatim} % Exact characters you type are reproduced - useful for code snippets.
+\usepackage{subfig} % Placing multiple figures within a single figure environment, along with sub-captions.
+\usepackage{lipsum} % Lorem Ipsum generator.
+\usepackage{xcolor} % Commands for working with colours in the document.
+\usepackage{listings} % For typesetting code listings with syntax highlights and formatting options.
+\usepackage[toc,page]{appendix} % Enhanced control of appendices, including adding them to the table of contents and starting them on a new page.
+
+\begin{document}
+
+\input{./report_title.tex}
+%--- \input{./report_declaration.tex} ---- Uncomment this if you want to include a declaration of some sort.
+\pagebreak
+
+% ----------------- Abstract ----------------
+\begin{abstract}
+\thispagestyle{empty} % Removing page number
+    \lipsum[2-3] % --- REPLACE WITH YOUR TEXT
+\end{abstract}
+\pagebreak
+
+\thispagestyle{empty} % Removing page number
+\tableofcontents % Inlcude table of contents
+\newpage
+
+% Header and Footer settings
+\pagestyle{fancyplain}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\setlength{\headheight}{15pt}
+\fancyhead[L]{Name}
+\fancyhead[R]{Another name}
+\fancyfoot[L]{}
+\fancyfoot[C]{\thepage}
+\newpage
+
+\thispagestyle{empty} % Removing page number
+\listoffigures % -------- Disable if you dont need list of figures
+\newpage
+
+\begin{multicols}{2} % Multi-column starts here. Setting up main body to have 2 column pages, remove if not needed.
+\setcounter{page}{1} % Page one will start here.
+
+\section{Title}
+\lipsum[2] % --- REPLACE WITH YOUR TEXT
+    \subsection{title of section 1}
+    \lipsum[2-3] % --- REPLACE WITH YOUR TEXT
+
+    \begin{figure}[h] % [h] - here, [t] - top of the page, [b] - bottom of the page.
+        \centering
+        \includegraphics[scale=0.7]{test_figure.jpg} % Or use [width=\textwidth] if scaling not required
+        \caption{Testing}
+    \end{figure}
+            \subsubsection{another section}
+            \lipsum[2-3] % --- REPLACE WITH YOUR TEXT
+% Example of a bullet point list
+\begin{itemize}
+    \item one
+    \item two
+    \item three
+\end{itemize}
+
+\section{Title 2}
+\lipsum[2-3] % --- REPLACE WITH YOUR TEXT
+% Examples of italics and bold font
+\textit{italics}
+\textbf{bold}
+\\
+
+% Example of an inline and displayed formulas
+Inline formula: $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
+\\
+
+Displayed formula:
+\begin{equation} 
+    \int_0^\infty e^{-x} \, dx = 1
+\end{equation}
+\\
+% Example of how to cite
+Citation1: \cite{article1}
+\\
+Citation2: \cite{website1}
+
+\end{multicols} % Multi-column setting ends here.
+\pagebreak
+
+% Remove or comment out if not needed.
+% --------- Bibliography ----------
+\bibliographystyle{apacite}
+\setlength{\bibitemsep}{1em} % Adjust spacing between items
+\bibliography{bibliography} % Looking for a separate file named bibliography.bib
+
+\newpage
+
+% ---------- Appendices -----------
+\begin{appendices}
+    \section{appendix1}
+        \begin{subappendices}
+            \subsection{subAppendix1}
+        \end{subappendices}
+\end{appendices}
+
+\end{document}
